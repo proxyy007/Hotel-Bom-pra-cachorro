@@ -1,0 +1,44 @@
+.tela {
+    display: flex;
+    border: 5px solid black;
+    width: 1890px;
+    height: 900px;
+}
+
+.cabeçario {
+    border: 1px solid black;
+    width: 1890px;
+    height: 100px;
+    padding: 20px;
+}
+
+.sobre_nos {
+    margin-left: 1100px;
+    display: inline;
+    font-size: 20px;
+
+}
+
+.contatos {
+    display: inline;
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+.planos {
+    display: inline;
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+.cadastro {
+    display: inline;
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+.login {
+    display: inline;
+    font-size: 20px;
+    margin-left: 50px;
+}
