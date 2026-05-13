@@ -5,13 +5,15 @@ a {
 }
 
 a:hover {
-    color: blue;
+    color: #333;
 }
 
 /* Reset de margin e padding do body */
 body {
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FFA500; /* fundo laranja principal */
 }
 
 /* Tela principal */
@@ -19,40 +21,43 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /* Cabeçário completo */
 .cabeçario {
     display: flex;
-    align-items: center;             /* centraliza verticalmente */
-    justify-content: space-between;  /* separa logo dos links */
-    border: 2px solid black;         /* borda do quadrado do cabeçário */
+    align-items: center;             
+    justify-content: space-between;  
+    border: 2px solid #FFB733;         /* borda laranja escuro */
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
+    background-color: #FFA500;  /* laranja principal */
 }
 
 /* Logo */
 .logo {
-    border: 1px solid black; /* borda opcional só da logo */
+    border: 1px solid #FFB733; /* borda em tom laranja escuro */
     width: 300px;
     padding: 10px;
     text-align: center;
     box-sizing: border-box;
+    color: black;
 }
 
 /* Container dos links e botão */
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 80px; /* espaço entre links */
+    gap: 40px; 
 }
 
 /* Links individuais */
 .sobre_nos, .contatos, .planos, .cadastro {
     font-size: 20px;
     font-weight: lighter;
+    color: black;
 }
 
 /* Botão Login */
@@ -60,15 +65,117 @@ body {
     padding: 10px 20px;
     border-radius: 25px;
     border: none;
-    background-color: black;
+    background-color: #FF8C00; /* laranja mais escuro */
     color: white;
     cursor: pointer;
     font-weight: lighter;
-    transition: all 0.3s ease; /* animação suave */
+    transition: all 0.3s ease;
 }
 
 #login:hover {
-    background-color: white;
+    background-color: #FFA500; /* laranja claro */
     color: black;
-    border: 1px solid black;
+    border: 1px solid #FFB733;
+}
+
+/* Conteúdo da página com duas colunas */
+.conteudo {
+    display: flex;               
+    align-items: flex-start;     
+    justify-content: space-between;
+    padding: 40px;
+    margin-top: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border: 2px solid #FFB733;    
+    background-color: #FF9C33;  /* laranja médio */
+    gap: 40px;                   
+}
+
+/* Coluna de texto */
+.texto {
+    flex: 1;                     
+    color: black;
+}
+
+/* Coluna da imagem */
+.imagem {
+    border: 1px solid #FFB733;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem img {
+    max-width: 100%;             
+    height: 300px;
+    width: 250px;
+    border-radius: 10px;         
+}
+
+/* Nova div de serviços */
+.servicos {
+    margin-top: 20px;            
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #FFB733;   /* laranja escuro para os cards */
+}
+
+.servicos h3 {
+    margin-bottom: 10px;
+    text-align: center;
+    color: black;
+}
+
+.servicos ul {
+    list-style-type: none;       
+    padding-left: 0;
+}
+
+.servicos li {
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    background-color: #FFA533;   /* laranja médio */
+    border-radius: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.servicos li:hover {
+    transform: translateY(-2px);
+    background-color: #FF8C00; /* escurece no hover */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .conteudo {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .texto, .imagem {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .imagem {
+        margin-top: 20px;
+    }
+
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
 }
