@@ -1,29 +1,137 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Bom pra Cachorro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Bom Pra Cachorro - Cadastro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<header>
-<div class="logo">
-<img src="#">
-</div>
+<body>
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🐾</span>
+      <span>HOTEL BOM<br>PRA CACHORRO</span>
+    </a>
+  </header>
 
-</header>
-<body> 
-<div class="usuario">
- <input type="text" placeholder="usuário" name="nome" id="txtnome">
- </div>
- <div class="senha">
- <input type="text" placeholder="senha" name="nome" id="txtnome" >
- </div>
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="form-container">
+      <!-- LOGO CIRCLE -->
+      <div class="logo-circle">🐾</div>
 
- <button type="button" name="Entrar" onclick="submit" id="botao"></button>
- 
- <a></a>
- 
- 
-    
+      <!-- FORM TITLE -->
+      <h2 class="form-title">Cadastro da Reserva</h2>
+
+      <!-- FORM -->
+      <form id="cadastroForm" onsubmit="handleSubmit(event)">
+        
+        <!-- Número de Identificação -->
+        <div class="form-group">
+          <label for="reservaId">Número de Identificação da Reserva</label>
+          <input type="text" id="reservaId" name="reservaId" placeholder="Ex: RES001" required>
+          <span class="error-message">Este campo é obrigatório</span>
+        </div>
+
+        <!-- Nome do Tutor -->
+        <div class="form-group">
+          <label for="nomeTutor">Nome do Tutor</label>
+          <input type="text" id="nomeTutor" name="nomeTutor" placeholder="Seu nome completo" required>
+          <span class="error-message">Este campo é obrigatório</span>
+        </div>
+
+        <!-- Telefone -->
+        <div class="form-group">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(11) 9999-9999" required>
+          <span class="error-message">Este campo é obrigatório</span>
+        </div>
+
+        <!-- Endereço -->
+        <div class="form-group">
+          <label for="endereco">Endereço</label>
+          <input type="text" id="endereco" name="endereco" placeholder="Rua, número, bairro" required>
+          <span class="error-message">Este campo é obrigatório</span>
+        </div>
+
+        <!-- Idade do Animal -->
+        <div class="form-group">
+          <label for="idadeAnimal">Idade do Animal</label>
+          <input type="text" id="idadeAnimal" name="idadeAnimal" placeholder="Ex: 3 anos" required>
+          <span class="error-message">Este campo é obrigatório</span>
+        </div>
+
+        <!-- Estado de Saúde -->
+        <div class="form-group">
+          <label for="saudeanimal">Estado de Saúde</label>
+          <select id="saudeanimal" name="saudeanimal" required>
+            <option value="">Selecione o estado de saúde</option>
+            <option value="excelente">Excelente</option>
+            <option value="bom">Bom</option>
+            <option value="regular">Regular</option>
+            <option value="com_restricoes">Com Restrições</option>
+          </select>
+          <span class="error-message">Este campo é obrigatório</span>
+        </div>
+
+        <!-- Preferências Alimentares -->
+        <div class="form-group">
+          <label for="preferenciasAlimentares">Preferências Alimentares</label>
+          <textarea id="preferenciasAlimentares" name="preferenciasAlimentares" placeholder="Descreva as preferências do seu pet..." required></textarea>
+          <span class="error-message">Este campo é obrigatório</span>
+        </div>
+
+        <!-- Atividades Físicas -->
+        <div class="form-group">
+          <label for="atividades">Atividades Físicas</label>
+          <textarea id="atividades" name="atividades" placeholder="Quais atividades seu pet gosta?" required></textarea>
+          <span class="error-message">Este campo é obrigatório</span>
+        </div>
+
+        <!-- Restrições Médicas -->
+        <div class="form-group">
+          <label for="restricoes">Restrições Médicas</label>
+          <textarea id="restricoes" name="restricoes" placeholder="Descreva qualquer restrição médica..." required></textarea>
+          <span class="error-message">Este campo é obrigatório</span>
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-submit">
+            Confirmar Cadastro
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER WITH NAVIGATION -->
+  <footer>
+    <div class="nav-bar">
+      <a href="index.html" class="nav-item">
+        <div class="nav-icon">🏠</div>
+        <div class="nav-text">Início</div>
+      </a>
+      <a href="#" class="nav-item" onclick="showAlert('Contato', 'Telefone: (11) 9999-9999'); return false;">
+        <div class="nav-icon">📞</div>
+        <div class="nav-text">Contatos</div>
+      </a>
+      <a href="planos.html" class="nav-item">
+        <div class="nav-icon">⭐</div>
+        <div class="nav-text">Planos</div>
+      </a>
+      <a href="cadastro.html" class="nav-item">
+        <div class="nav-icon">📋</div>
+        <div class="nav-text">Cadastro</div>
+      </a>
+    </div>
+  </footer>
+
+  <!-- REFERENCE TO EXTERNAL JAVASCRIPT FILE -->
+  <script src="cadastro.js"></script>
 </body>
 </html>
