@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles3.css">
 </head>
 <body>
-  <!-- HEADER -->
+
   <header>
     <a href="index.html" class="logo">
       <span class="logo-icon">🐾</span>
@@ -18,54 +18,54 @@
     </a>
   </header>
 
-  <!-- MAIN CONTENT -->
+
   <main>
     <div class="form-container">
-      <!-- LOGO CIRCLE -->
+  
       <div class="logo-circle">🐾</div>
 
-      <!-- FORM TITLE -->
+     
       <h2 class="form-title">Cadastro da Reserva</h2>
 
-      <!-- FORM -->
+     
       <form id="cadastroForm" onsubmit="handleSubmit(event)">
         
-        <!-- Número de Identificação -->
+       
         <div class="form-group">
           <label for="reservaId">Número de Identificação da Reserva</label>
           <input type="text" id="reservaId" name="reservaId" placeholder="Ex: RES001" required>
           <span class="error-message">Este campo é obrigatório</span>
         </div>
 
-        <!-- Nome do Tutor -->
+      
         <div class="form-group">
           <label for="nomeTutor">Nome do Tutor</label>
           <input type="text" id="nomeTutor" name="nomeTutor" placeholder="Seu nome completo" required>
           <span class="error-message">Este campo é obrigatório</span>
         </div>
 
-        <!-- Telefone -->
+     
         <div class="form-group">
           <label for="telefone">Telefone</label>
           <input type="tel" id="telefone" name="telefone" placeholder="(11) 9999-9999" required>
           <span class="error-message">Este campo é obrigatório</span>
         </div>
 
-        <!-- Endereço -->
+        
         <div class="form-group">
           <label for="endereco">Endereço</label>
           <input type="text" id="endereco" name="endereco" placeholder="Rua, número, bairro" required>
           <span class="error-message">Este campo é obrigatório</span>
         </div>
 
-        <!-- Idade do Animal -->
+       
         <div class="form-group">
           <label for="idadeAnimal">Idade do Animal</label>
           <input type="text" id="idadeAnimal" name="idadeAnimal" placeholder="Ex: 3 anos" required>
           <span class="error-message">Este campo é obrigatório</span>
         </div>
 
-        <!-- Estado de Saúde -->
+      
         <div class="form-group">
           <label for="saudeanimal">Estado de Saúde</label>
           <select id="saudeanimal" name="saudeanimal" required>
@@ -78,28 +78,28 @@
           <span class="error-message">Este campo é obrigatório</span>
         </div>
 
-        <!-- Preferências Alimentares -->
+      
         <div class="form-group">
           <label for="preferenciasAlimentares">Preferências Alimentares</label>
           <textarea id="preferenciasAlimentares" name="preferenciasAlimentares" placeholder="Descreva as preferências do seu pet..." required></textarea>
           <span class="error-message">Este campo é obrigatório</span>
         </div>
 
-        <!-- Atividades Físicas -->
+       
         <div class="form-group">
           <label for="atividades">Atividades Físicas</label>
           <textarea id="atividades" name="atividades" placeholder="Quais atividades seu pet gosta?" required></textarea>
           <span class="error-message">Este campo é obrigatório</span>
         </div>
 
-        <!-- Restrições Médicas -->
+        
         <div class="form-group">
           <label for="restricoes">Restrições Médicas</label>
           <textarea id="restricoes" name="restricoes" placeholder="Descreva qualquer restrição médica..." required></textarea>
           <span class="error-message">Este campo é obrigatório</span>
         </div>
 
-        <!-- SUBMIT BUTTON -->
+   
         <div class="form-actions">
           <button type="submit" class="btn btn-primary btn-submit">
             Confirmar Cadastro
