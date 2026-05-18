@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Bom Pra Cachorro - Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles2.css">
+</head>
+<body class="login-page">
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🐾</span>
+      <span>HOTEL BOM PRA CACHORRO</span>
+    </a>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="login-container">
+      <div class="login-card">
+        <!-- LOGO CIRCLE WITH PAW AND HEART -->
+        <div class="login-logo">🐾❤️</div>
+
+        <!-- LOGIN TITLE -->
+        <h2>HOTEL</h2>
+        <p class="login-subtitle">Bom Pra Cachorro</p>
+
+        <!-- LOGIN FORM -->
+        <form class="login-form" onsubmit="handleLogin(event)">
+          <!-- EMAIL INPUT -->
+          <div class="form-group">
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="Email"
+              required
+            >
+          </div>
+
+          <!-- PASSWORD INPUT -->
+          <div class="form-group">
+            <input 
+              type="password" 
+              id="senha" 
+              name="senha" 
+              placeholder="Senha"
+              required
+            >
+          </div>
+
+          <!-- LOGIN BUTTON -->
+          <button type="submit" class="btn btn-primary btn-login">
+            Entrar
+          </button>
+        </form>
+
+        <!-- FORGOT PASSWORD LINK -->
+        <div class="forgot-password">
+          <a href="#" onclick="handleForgotPassword(event)">
+            Esqueceu a senha?
+            <span>❤️</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="nav-bar">
+      <a href="index.html" class="nav-item">
+        <div class="nav-icon">🏠</div>
+        <div class="nav-text">Início</div>
+      </a>
+      <a href="planos.html" class="nav-item">
+        <div class="nav-icon">⭐</div>
+        <div class="nav-text">Planos</div>
+      </a>
+      <a href="cadastro.html" class="nav-item">
+        <div class="nav-icon">📋</div>
+        <div class="nav-text">Cadastro</div>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Handle login form submission
+    function handleLogin(event) {
+      event.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const senha = document.getElementById('senha').value.trim();
+
+      // Simple validation
+      if (email === '' || senha === '') {
+        alert('⚠️ Por favor, preencha todos os campos!');
+        return;
+      }
+
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('⚠️ Por favor, digite um email válido!');
+        return;
+      }
+
+      // Validate password length
+      if (senha.length < 6) {
+        alert('⚠️ A senha deve ter pelo menos 6 caracteres!');
+        return;
+      }
+
+      // If everything is valid, show success message
+      const userName = email.split('@')[0];
+      alert(`🎉 Bem-vindo, ${userName}!\n\nVocê foi autenticado com sucesso!\nAinda estamos configurando seu acesso. 🐾`);
+
+      // Reset form
+      document.querySelector('.login-form').reset();
+      
+      // Optional: Redirect to home page after 2 seconds
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 2000);
+    }
+
+    // Handle forgot password
+    function handleForgotPassword(event) {
+      event.preventDefault();
+      alert('💌 Instruções de recuperação foram enviadas para seu email!\n\nVerifique sua caixa de entrada. Se não encontrar, verifique a pasta de spam.');
+    }
+
+    // Add smooth focus animations to inputs
+    document.addEventListener('DOMContentLoaded', function() {
+      const inputs = document.querySelectorAll('input');
+      
+      inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+          this.parentElement.style.transform = 'scale(1.02)';
+        });
+
+        input.addEventListener('blur', function() {
+          this.parentElement.style.transform = 'scale(1)';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
